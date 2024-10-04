@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        String email = " ";
+        do {
+            System.out.println("Digite um email: ");
+
+            email = scan.next();
+
+            email = verificacao(email);
+        } while(!(email.matches("^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[.a-zA-Z0-9-]+$")));
+    }
+
+    public static String verificacao(String email){
+        if(email.matches("^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[.a-zA-Z0-9-]+$")){
+            System.out.println("Email válido!");
+        }
+        else{
+            System.out.println("Email não é válido! Digite novamente.");
+        }
+
+        return email;
+    }
+}
