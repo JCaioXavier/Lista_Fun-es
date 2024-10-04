@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Digite um numero: ");
+
+        int numero = scan.nextInt();
+
+        parametro(numero);
+
+        String numeroDigitos = parametro(numero);
+
+        System.out.println(numeroDigitos.length());
+    }
+
+    public static String parametro(int numero) {
+        String numeroDigitos = Integer.toString(numero);
+
+        return numeroDigitos;
+    }
+}
