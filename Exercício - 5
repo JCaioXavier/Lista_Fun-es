@@ -1,0 +1,59 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        do{
+            System.out.println("Usuario: ");
+            String loginU = scan.next();
+
+            System.out.println("Senha: ");
+            String loginS = scan.next();
+
+            if(controlador(loginU, loginS)){
+                System.out.println("Login bem-sucedido!");
+                return;
+            }
+            else{
+                System.out.println("Usuário ou senha incorretos");
+            }
+        }while(true);
+    }
+
+    public static ArrayList<String> controlador_usuario(){
+        ArrayList<String> usuarios = new ArrayList<>();
+
+        usuarios.add("teste");
+        usuarios.add("teste2");
+        usuarios.add("teste3");
+        usuarios.add("teste4");
+
+        return usuarios;
+    }
+
+    public static ArrayList<String>controlador_senha(){
+        ArrayList<String> senhas = new ArrayList<>();
+
+        senhas.add("admin");
+        senhas.add("admin2");
+        senhas.add("admin3");
+        senhas.add("admin4");
+
+        return senhas;
+    }
+
+    public static boolean controlador(String loginU, String loginS){
+        ArrayList<String> usuarios = controlador_usuario();
+        ArrayList<String> senhas = controlador_senha();
+
+        for (int i = 0; i < usuarios.size(); i++) {
+            if (loginU.equals(usuarios.get(i)) && loginS.equals(senhas.get(i))) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+}
