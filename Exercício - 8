@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Digite um numero inteiro: ");
+
+        int numero = scan.nextInt();
+
+        booleano(numero);
+    }
+
+    public static void booleano(int numero){
+        if(numero % 2 == 0 || numero % 3 == 0 || numero % 5 == 0|| numero % 7 == 0){
+            if(numero == 2 || numero == 3 || numero == 5 || numero == 7){
+                System.out.println(true);
+            }
+            System.out.println(false);
+        }
+        else{
+            System.out.println(false);
+        }
+    }
+}
