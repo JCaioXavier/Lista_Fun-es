@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int escolha;
+
+        float numeroDois;
+
+        System.out.println("Digite o primeiro valor: ");
+
+        float numeroUm = scan.nextFloat();
+
+        do{
+            System.out.println("Digite o segundo valor: ");
+            numeroDois = scan.nextFloat();
+            if(numeroDois >= 1){
+                continue;
+            }
+            System.out.println("Não é possível dividir por zero");
+        }while(numeroDois == 0);
+
+        do {
+            System.out.println("""
+                    Escolha a opção que deseja: 
+                    Soma ---------> 1
+                    Divisão ------> 2
+                    Subtração ----> 3
+                    Multiplcação -> 4
+                    """);
+
+            escolha = scan.nextInt();
+
+        } while ((escolha < 1 || escolha > 4));
+        
+        funcao(numeroUm, numeroDois, escolha);
+    }
+
+    public static void funcao(float numeroUm, float numeroDois, int escolha){
+        if(escolha == 1){
+            System.out.println(numeroUm + numeroDois);
+        }
+        else if(escolha == 2){
+            System.out.println(numeroUm / numeroDois);
+        }
+        else if(escolha == 3){
+            System.out.println(numeroUm - numeroDois);
+        }
+        else{
+            System.out.println(numeroUm * numeroDois);
+        }
+    }
+}
