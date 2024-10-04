@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Digite um numero: ");
+
+        int numero = scan.nextInt();
+
+        parametro(numero);
+    }
+
+    public static void parametro(int numero) {
+        if(numero > 0){
+            System.out.println("P");
+        }
+        else{
+            System.out.println("N");
+        }
+    }
+}
