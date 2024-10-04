@@ -1,0 +1,73 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("""
+                           Escolha a opção que deseja: 
+                           Soma ---------> 1
+                           Divisão ------> 2
+                           Subtração ----> 3
+                           Multiplcação -> 4
+                           """);
+
+        int escolha = scan.nextInt();
+
+        if(escolha == 1){
+            Soma();
+        }
+        else if(escolha == 2){
+            Divisao();
+        }
+        else if(escolha == 3){
+            Subtracao();
+        }
+        else if(escolha == 4){
+            Multiplicacao();
+        }
+    }
+
+    public static float[] valores(){
+        Scanner scan = new Scanner(System.in);
+
+        float[] valores = new float[2];
+
+        System.out.println("Digite o primeiro valor: ");
+        valores[0] = scan.nextFloat();
+
+        System.out.println("Digite o segundo valor: ");
+        valores[1] = scan.nextInt();
+
+        return valores;
+    }
+
+    public static void Soma(){
+        float[] valoresR = valores();
+
+        System.out.println(("A soma é igual a: " + (valoresR[0] + valoresR [1])));
+    }
+
+    public static void Divisao(){
+        float[] valoresR = valores();
+
+        if(valoresR[1] == 0){
+            System.out.println("Não existe divisão por 0! Digite novamente.");
+            valoresR = valores();
+        }
+
+        System.out.println(("A divisão é igual a: " + (valoresR[0] / valoresR [1])));
+    }
+
+    public static void Subtracao(){
+        float[] valoresR = valores();
+
+        System.out.println(("A subtração é igual a: " + (valoresR[0] - valoresR [1])));
+    }
+
+    public static void Multiplicacao(){
+        float[] valoresR = valores();
+
+        System.out.println(("A multiplicação é igual a: " + (valoresR[0] * valoresR [1])));
+    }
+}
