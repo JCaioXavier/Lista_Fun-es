@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Digite um numero inteiro: ");
+
+        int numero = scan.nextInt();
+
+        while(numero <= 0){
+            System.out.println("O numero n pode ser menor ou igual a zero, digite outro valor.");
+
+            numero = scan.nextInt();
+        }
+
+        int valorFinal = fatorial(numero);
+
+        System.out.println(valorFinal);
+
+    }
+
+    public static int fatorial(int n) {
+        if(n == 0){
+            return 1;
+        }
+
+        return n * fatorial(n - 1);
+    }
+}
