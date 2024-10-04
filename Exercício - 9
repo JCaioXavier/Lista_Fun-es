@@ -1,0 +1,44 @@
+import java.util.List;
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int contador = 1, total = 0;
+
+        System.out.println("Quantos numeros deseja digitar? ");
+
+        int quantidade = scan.nextInt();
+
+        List<Integer> numeros = lista(quantidade);
+
+        System.out.println("Lista de todos os numeros digitados: ");
+
+        for(Integer numero : numeros){
+            System.out.println(contador+": "+numero);
+            total += numero;
+            contador++;
+        }
+        System.out.println("A soma de todos estes numeros é igual a: "+total);
+    }
+
+    public static List<Integer> lista(int quantidade){
+        Scanner scan = new Scanner(System.in);
+        List<Integer> numeros = new ArrayList<>();
+
+        System.out.println("Digite o primeiro numero: ");
+
+        for(int i = 1; i <= quantidade; i++){
+            if(i > 1 && i != quantidade){
+                System.out.println("Digite o proximo numero: ");
+            }
+            else if(quantidade == i){
+                System.out.println("Digite o ultimo numero: ");
+            }
+            numeros.add(scan.nextInt());
+        }
+        return numeros;
+    }
+}
