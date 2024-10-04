@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int contador = 0;
+
+        System.out.println("Digite uma frase: ");
+
+        String frase = scan.next();
+
+        contador = funcao(contador, frase);
+
+        System.out.println(contador);
+
+    }
+
+    public static int funcao(int contador, String frase) {
+        String vogais = "aeiou";
+
+        for (char caracter : frase.toCharArray()) {
+            if(vogais.contains(String.valueOf(caracter))){
+                contador++;
+            }
+        }
+
+        return contador;
+    }
+}
